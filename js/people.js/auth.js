@@ -2,7 +2,9 @@
 const usuarios = [
     { nome: 'admin', senha: '123456' },
     { nome: 'usuario', senha: 'senha123' },
-    { nome: 'test', senha: 'test123' }
+    { nome: 'test', senha: 'test123' },
+    { nome: 'luiz henrique da silva pereira', senha: '123456' },
+
 ];
 
 // Função para fazer login
