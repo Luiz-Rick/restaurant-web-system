@@ -57,6 +57,40 @@ let usuarios = JSON.parse(localStorage.getItem('usuariosApp')) || [
     }
 ];
 
+// --- NOVA FUNÇÃO: Gerar e Baixar Pessoas.txt ---
+function gerarArquivoTxt() {
+    let conteudo = "=== LISTA DE USUÁRIOS CADASTRADOS ===\n\n";
+
+    // Percorre cada usuário e formata os dados para o texto
+    usuarios.forEach((user, index) => {
+        conteudo += `ID: ${index + 1}\n`;
+        conteudo += `Nome Completo: ${user.nomeCompleto}\n`;
+        conteudo += `Usuário: ${user.usuario}\n`;
+        conteudo += `Senha: ${user.senha}\n`;
+        conteudo += `Telefone: ${user.telefone}\n`;
+        conteudo += `Endereço: ${user.endereco}, ${user.numero}\n`;
+        conteudo += `Cidade/UF: ${user.cidade} - ${user.estado}\n`;
+        conteudo += `CEP: ${user.cep}\n`;
+        conteudo += "--------------------------------------\n";
+    });
+
+    // Cria um objeto Blob com o conteúdo de texto
+    const blob = new Blob([conteudo], { type: "text/plain;charset=utf-8" });
+
+    // Cria um link temporário para download
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Pessoas.txt"; // Nome do arquivo
+    a.style.display = "none";
+    
+    // Adiciona ao corpo do documento, clica e remove
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+}
+
 // Salva usuários no localStorage
 function salvarUsuariosLocalStorage() {
     localStorage.setItem('usuariosApp', JSON.stringify(usuarios));
@@ -195,9 +229,13 @@ function fazerCadastro() {
     
     // Salva usuários no localStorage
     salvarUsuariosLocalStorage();
+
+    // --- GERA O ARQUIVO TXT APÓS O CADASTRO ---
+    // Isso vai baixar automaticamente o arquivo 'Pessoas.txt' atualizado
+    gerarArquivoTxt();
     
     // Exibe mensagem de sucesso
-    mostrarSucessoCadastro('Cadastro realizado com sucesso! Você será redirecionado para login em 2 segundos...');
+    mostrarSucessoCadastro('Cadastro realizado! O arquivo Pessoas.txt foi baixado. Redirecionando...');
     
     // Limpa o formulário
     document.getElementById('formularioCadastro').reset();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Pizzaria</title>
+    <title>Cadastro - Pizzaria da Orla</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
@@ -29,6 +29,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    
     <style>
         .signup-wrap {
             background: rgba(0, 0, 0, 0.85);
@@ -188,6 +189,7 @@
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="admin.html" class="nav-link">Admin</a></li>
                     <li class="nav-item active"><a href="cadastro.html" class="nav-link">Cadastro</a></li>
                     <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
                     <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
@@ -224,29 +226,29 @@
                         <div id="mensagemSucesso"></div>
                         <div id="mensagemErro"></div>
 
-                        <form id="formularioCadastro">
+                        <form id="formularioCadastro" >
                             <!-- Nome Completo -->
                             <div class="form-group">
                                 <label for="nomeCompleto">Nome Completo *</label>
-                                <input type="text" id="nomeCompleto" class="form-control" placeholder="Ex: Luiz Henrique da Silva Pereira" required>
+                                <input type="text" id="nomeCompleto" name="nomeCompleto" class="form-control" placeholder="Ex: Luiz Henrique da Silva Pereira" required>
                             </div>
 
                             <!-- Nome de Usuário e Telefone -->
                             <div class="form-row-custom">
                                 <div class="form-group">
                                     <label for="usuario">Nome de Usuário *</label>
-                                    <input type="text" id="usuario" class="form-control" placeholder="Ex: luiz.silva" required>
+                                    <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Ex: luiz.silva" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="telefone">Telefone *</label>
-                                    <input type="tel" id="telefone" class="form-control" placeholder="(83) 98888-8888" required>
+                                    <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(83) 98888-8888" required>
                                 </div>
                             </div>
 
                             <!-- Endereço -->
                             <div class="form-group form-row-full">
                                 <label for="endereco">Endereço *</label>
-                                <input type="text" id="endereco" class="form-control" placeholder="Ex: Rua das Flores, 123" required>
+                                <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Ex: Rua das Flores, 123" required>
                             </div>
 
                             <!-- Número e Complemento -->
@@ -278,7 +280,7 @@
                             <!-- Senha -->
                             <div class="form-group form-row-full">
                                 <label for="senha">Senha *</label>
-                                <input type="password" id="senha" class="form-control" placeholder="Mínimo 6 caracteres" required>
+                                <input type="password" id="senha" name="senha" class="form-control" placeholder="Mínimo 6 caracteres" required>
                             </div>
 
                             <!-- Confirmar Senha -->
@@ -288,7 +290,7 @@
                             </div>
 
                             <!-- Botão de Cadastro -->
-                            <button type="button" class="form-control btn btn-primary submit px-3" onclick="fazerCadastro()">Criar Conta</button>
+                            <button type="submit" class="form-control btn btn-primary submit px-3">Criar Conta</button>
 
                             <!-- Link para Login -->
                             <div class="login-link">
@@ -300,6 +302,8 @@
             </div>
         </div>
     </section>
+    <!-- link do script que valida a entrada de dados dos cadastros das pessoas -->
+    <script src="script.js"></script>
 
     <footer class="ftco-footer ftco-section img">
         <div class="overlay"></div>

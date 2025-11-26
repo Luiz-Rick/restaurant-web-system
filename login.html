@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - Pizzaria da Orla</title>
 <!--  deixa eu ver se sa fazendo alguma alteração pro pessoal tbm -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
@@ -33,6 +33,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<!-- link do bootstraap para o script.js -->
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 
 
 </head>
@@ -45,6 +49,7 @@
 		      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
+			  <li class="nav-item"><a href="admin.html" class="nav-link">Admin</a></li>
 			  <li class="nav-item active"><a href="login.html" class="nav-link"> Login</a></li>
 	          <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
 	          <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
@@ -94,7 +99,7 @@
 		      	<!-- Mensagem de erro -->
 		      	<div id="mensagemErro" style="display:none; color: #ff4757; background-color: #fff5f5; padding: 12px; border-radius: 5px; margin-bottom: 15px; text-align: center; border: 1px solid #ff4757;"></div>
 		      	
-		      	<form id="formularioLogin" class="signin-form">
+		      	<form id="formularioLogin"  class="signin-form">
 		      		<div class="form-group">
 		      			<input type="text" id="usuario" class="form-control" placeholder="Nome de usuario" required>
 		      		</div>
@@ -103,7 +108,7 @@
 	              <span toggle="#senha" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
 	            <div class="form-group">
-	            	<button type="button" class="form-control btn btn-primary submit px-3" onclick="fazerLogin()">Fazer login</button>
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Fazer login</button>
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
@@ -126,6 +131,8 @@
 			</div>
 		</div>
 	</section>
+	   <!-- link do script que valida a entrada de dados dos cadastros das pessoas -->
+	<script src="script.js"></script>
 
 
   <script src="js/jquery.min.js"></script>
